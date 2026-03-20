@@ -1,0 +1,334 @@
+/* ===== Team Section ===== */
+.team-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg-color) 0%, #0a0a0a 50%, var(--bg-color) 100%);
+}
+
+.team-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.team-section::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  opacity: 0.12;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Header */
+.team-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.team-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.team-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--text-high);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.team-title .highlight {
+  background: linear-gradient(135deg, var(--primary-color), #f0d060, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Team Card */
+.team-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+/* Card Image */
+.team-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.team-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+              filter 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.team-card:hover .team-card-image img {
+  transform: scale(1.08);
+  filter: brightness(0.7);
+}
+
+/* Gold gradient overlay on hover */
+.team-card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.95) 0%,
+    rgba(5, 5, 5, 0.5) 40%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+
+.team-card:hover .team-card-image::after {
+  opacity: 1;
+}
+
+/* Decorative corner accent */
+.card-accent {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+  opacity: 0;
+  transform: translate(10px, -10px);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 2;
+}
+
+.team-card:hover .card-accent {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Card Info */
+.team-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 2;
+  transform: translateY(20px);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.team-card:hover .team-card-info {
+  transform: translateY(0);
+}
+
+.team-member-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-high);
+  margin-bottom: 0.3rem;
+}
+
+.team-member-role {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+}
+
+.team-member-bio {
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.team-card:hover .team-member-bio {
+  opacity: 1;
+  max-height: 100px;
+  margin-bottom: 1rem;
+}
+
+/* Social Links */
+.team-social {
+  display: flex;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+}
+
+.team-card:hover .team-social {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-high);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Gold line divider */
+.team-divider {
+  width: 30px;
+  height: 2px;
+  background: var(--primary-color);
+  margin-bottom: 0.8rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+}
+
+.team-card:hover .team-divider {
+  transform: scaleX(1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .team-header {
+    margin-bottom: 3rem;
+  }
+
+  .team-subtitle {
+    font-size: 1rem;
+  }
+
+  /* On mobile, show info always since hover doesn't work */
+  .team-card-info {
+    transform: translateY(0);
+  }
+
+  .team-member-bio {
+    opacity: 1;
+    max-height: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-social {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .team-divider {
+    transform: scaleX(1);
+  }
+
+  .team-card-image::after {
+    opacity: 1;
+  }
+
+  .card-accent {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  .team-member-name {
+    font-size: 1.15rem;
+  }
+
+  .team-member-role {
+    font-size: 0.78rem;
+  }
+
+  .team-member-bio {
+    font-size: 0.82rem;
+  }
+}

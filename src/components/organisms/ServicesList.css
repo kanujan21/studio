@@ -1,0 +1,140 @@
+.services-section {
+  background-color: var(--surface-color);
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.service-card {
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  height: 100%;
+}
+
+.service-card:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+  margin-bottom: 2rem;
+  display: inline-flex;
+}
+
+.service-title {
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.service-description {
+  color: var(--text-medium);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.service-price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.service-learn-more {
+  background: none;
+  border: none;
+  color: var(--text-medium);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: var(--transition-smooth);
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.service-learn-more:hover {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3rem;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .services-grid {
+    gap: 1.5rem;
+  }
+  .service-card {
+    padding: 2.5rem 1.5rem;
+  }
+  .service-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+  .service-description {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Very Small Screen */
+@media (max-width: 380px) {
+  .service-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .service-price {
+    font-size: 0.75rem;
+  }
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .service-title {
+    font-size: 1.15rem;
+  }
+  .service-description {
+    font-size: 0.88rem;
+  }
+}
