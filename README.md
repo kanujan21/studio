@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# LensCraft Studio | Professional Photography & Cinematography
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-end, futuristic portfolio and business website for **LensCraft Studio**, a premium photography and cinematography service based in Jaffna, Sri Lanka. This application features advanced UI/UX, 3D animations, and a fully responsive design.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **3D Interactive Hero Section**: Features a high-fidelity 3D camera model rendered with React Three Fiber, including interactive lighting and floating atmosphere elements.
+- **Cinematic UI/UX**: Built with Framer Motion for smooth transitions, staggered animations, and premium glassmorphism aesthetics.
+- **Dynamic Portfolio**: Categorized photographic works with a professional lightbox viewer and smooth filtering systems.
+- **Service Listings**: Detailed breakdown of studio offerings with localized Sri Lankan pricing (LKR) and localized content.
+- **Fully Responsive Architecture**: Meticulously optimized for all screen sizes (Mobile, Tablet, Desktop) with touch-friendly elements and proper viewport handling.
+- **Integrated Booking System**: Streamlined contact form and direct WhatsApp integration for client inquiries.
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Logic**: [TypeScript](https://www.typescriptlang.org/)
+- **3D Engine**: [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) / [Three.js](https://threejs.org/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Styling**: Vanilla CSS (Custom Variable Design System)
 
-## Expanding the ESLint configuration
+## 💻 Development Workflow
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v18 or later)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Installation
+Clone the repository and install dependencies:
+```bash
+git clone https://github.com/kanujan21/studio.git
+cd studio
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Development Server
+Start the development server with HMR:
+```bash
+npm run dev
 ```
+The application will be available at `http://localhost:5173`.
+
+### 3. Build & Production
+To create a production-optimized build:
+```bash
+npm run build
+```
+The output will be in the `dist/` folder. You can preview the production build locally using:
+```bash
+npm run preview
+```
+
+## 📂 Project Structure
+
+- `src/components/3d`: High-fidelity 3D models and Canvas components.
+- `src/components/atoms`: Small, reusable UI components (Buttons, etc.).
+- `src/components/organisms`: Large page sections (Hero, Portfolio, Team, etc.).
+- `src/assets`: Static images and global assets.
+- `src/index.css`: Global design system, color tokens, and utility classes.
+
+## 📄 License
+© 2026 LensCraft Studio. All rights reserved. Created for premium creative businesses.
+
