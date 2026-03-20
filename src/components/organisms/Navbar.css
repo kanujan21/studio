@@ -85,24 +85,14 @@
   width: 100%;
 }
 
-.nav-btn-book {
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  font-family: var(--font-heading);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  transition: var(--transition-smooth);
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.nav-btn-book:hover {
-  background: var(--primary-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 20px var(--primary-glow);
+/* New mobile-specific CTA button tweak */
+.mobile-cta-btn {
+  width: 100% !important;
+  max-width: 280px;
+  background: var(--primary-color) !important;
+  color: var(--bg-color) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px var(--primary-glow) !important;
 }
 
 .mobile-toggle {
@@ -170,17 +160,7 @@
   color: var(--primary-color);
 }
 
-.mobile-nav-link.text-gold {
-  margin-top: 1rem;
-  background: var(--primary-color);
-  color: var(--bg-color);
-  font-weight: 600;
-  border-radius: 8px;
-}
-
-.mobile-nav-link.text-gold:hover {
-  background: #f1c40f;
-}
+/* Mobile Button is now handled by .mobile-cta-btn above */
 
 /* Desktop large */
 @media (max-width: 1200px) {

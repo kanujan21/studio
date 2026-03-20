@@ -106,9 +106,17 @@
 @media (max-width: 576px) {
   .btn-lg { padding: 1rem 2rem; font-size: 0.9rem; min-height: 52px; }
   .btn-xl { padding: 1.2rem 2.8rem; font-size: 1rem; min-height: 58px; }
-  .btn { width: 100%; } /* Default to full width on mobile unless specified */
+  .btn { 
+    width: 100%; 
+    white-space: normal; /* Allow wrapping on mobile */
+    text-align: center;
+  }
 }
 
 @media (max-width: 380px) {
-   .btn { font-size: 0.8rem; letter-spacing: 0.05em; padding: 0.7rem 1.2rem; }
+   .btn { 
+     font-size: 0.8rem; 
+     letter-spacing: 0.05em; 
+     padding: 0.7rem 1.2rem;
+   }
 }

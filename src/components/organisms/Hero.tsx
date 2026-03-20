@@ -34,8 +34,8 @@ const Hero: React.FC = () => {
               Professional cinematography and photography services that turn your special moments into timeless works of art. From weddings to high-end portraits.
             </p>
             <div className="hero-actions">
-              <Button variant="primary" size="lg">View Portfolio</Button>
-              <Button variant="glass" size="lg">Book a Session</Button>
+              <Button variant="primary" size="lg" href="#portfolio">View Portfolio</Button>
+              <Button variant="glass" size="lg" href="#contact">Book a Session</Button>
             </div>
           </motion.div>
         </div>

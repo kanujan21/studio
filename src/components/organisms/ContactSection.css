@@ -187,22 +187,30 @@
 }
 
 @media (max-width: 992px) {
-  .contact-info-panel, .contact-form-panel {
-    grid-column: span 12;
-  }
   .contact-grid {
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
-  .contact-card {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  .contact-info-panel, .contact-form-panel {
+    grid-column: span 1;
+    width: 100%;
+    min-width: 0;
   }
-  .booking-form {
-     max-width: 700px;
-     margin-left: auto;
-     margin-right: auto;
+  .contact-card, .booking-form {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
+}
+
+/* Specific button fix for WhatsApp and Submit */
+.wa-btn, .submit-btn {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Mobile Screen */
@@ -218,8 +226,13 @@
 
 /* Small mobile Screen */
 @media (max-width: 500px) {
-  .booking-form { padding: 2rem 1.25rem; }
-  .contact-card { padding: 2.5rem 1.25rem; }
+  .booking-form {
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+  }
+  .contact-card {
+    padding: 2.5rem 1.25rem;
+  }
   .contact-info-description {
      margin-bottom: 2rem;
      font-size: 0.95rem;
@@ -227,13 +240,14 @@
   .info-list {
      gap: 1.5rem;
   }
-  .booking-form input, 
-  .booking-form select, 
+  .booking-form input,
+  .booking-form select,
   .booking-form textarea {
-    padding: 0.9rem;
+    padding: 0.85rem;
     font-size: 0.95rem;
   }
 }
+
 @media (max-width: 380px) {
    .contact-info-title {
       font-size: 1.3rem;
@@ -247,19 +261,12 @@
       height: 40px;
    }
    .booking-form {
-     padding: 1.5rem 1rem;
-     gap: 1.5rem;
+     padding: 1.25rem 0.85rem;
+     gap: 1.25rem;
+     width: 100%;
    }
    .contact-card {
-     padding: 2rem 1rem;
-   }
-   .booking-form input,
-   .booking-form select,
-   .booking-form textarea {
-     padding: 0.8rem;
-     font-size: 0.9rem;
-   }
-   .form-group label {
-     font-size: 0.7rem;
+     padding: 1.75rem 0.85rem;
+     width: 100%;
    }
 }

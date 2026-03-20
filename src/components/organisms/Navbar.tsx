@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Camera } from 'lucide-react';
+import Button from '../atoms/Button';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -42,7 +43,7 @@ const Navbar: React.FC = () => {
             </li>
           ))}
           <li>
-            <a href="#contact" className="nav-btn-book">Book Now</a>
+            <Button href="#contact" variant="outline" size="sm">Book Now</Button>
           </li>
         </ul>
 
@@ -77,14 +78,14 @@ const Navbar: React.FC = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a 
+              <li style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+                <Button 
                   href="#contact" 
-                  className="mobile-nav-link text-gold"
+                  className="mobile-cta-btn"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book Now
-                </a>
+                </Button>
               </li>
             </ul>
           </motion.div>

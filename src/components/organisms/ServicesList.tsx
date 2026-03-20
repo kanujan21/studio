@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Camera, Heart, Users, Video, Edit3, Image } from 'lucide-react';
+import Button from '../atoms/Button';
 import './ServicesList.css';
 
 const services = [
@@ -83,7 +84,7 @@ const Services: React.FC = () => {
               <p className="service-description">{service.description}</p>
               <div className="service-footer">
                 <span className="service-price text-gold">{service.price}</span>
-                <button className="service-learn-more">Learn More →</button>
+                <Button variant="outline" size="sm" href="#contact">Learn More →</Button>
               </div>
             </motion.div>
           ))}
